@@ -23,6 +23,12 @@ public class FPSShooting : MonoBehaviour
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
+            if(hit.transform.name == "Target(Clone)")
+            {
+                Destroy(hit.transform.gameObject);
+            }
+            //TargetScript target = hit.transform.GetComponent<TargetScript>();
+          
         }
     }
 }
