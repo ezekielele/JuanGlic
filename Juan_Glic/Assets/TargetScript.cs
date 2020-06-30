@@ -10,25 +10,13 @@ public class TargetScript : MonoBehaviour
 
     public float health = 50f;
 
-    public void TakeDamage(float amount)
-    {
-        health -= amount;
-        if(health <=0f)
-        {
-            Die();
-        }
-    }
-    
-    void Die()
-    {
-        Destroy(gameObject);
-    }
+
 
     // 50 times per secound
     void FixedUpdate()
     {
         count++;
-        if(count>=100){
+        if(count>=50){
             Vector3 pos = new Vector3(Random.Range(5f, -5f),Random.Range(1f, 10f),-30);
             Instantiate(target, pos, Quaternion.Euler(90f, 0f, 0f));
             count = 0;
